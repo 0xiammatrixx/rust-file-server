@@ -47,6 +47,7 @@ fn parse_request(request: &str) -> PathBuf {
     let parts: Vec<&str> = lines[0].split_whitespace().collect();
     let path = parts[1];
     let decoded_path = url_escape::decode(path).into_owned();
+
     PathBuf::from(decoded_path)
 }
 
